@@ -1,0 +1,34 @@
+<html>
+    <body>
+         <center>
+            <img id="playerFace" src="happy.png"/>
+            <br/><br/>
+            <div id="barraLife" style="background-color: greenyellow; width: 200px; height: 30px"></div>
+            <br/><br/>
+            <button id="btAtacaPlayer" style="background-color: darkcyan; height: 45px;">ATACAR JOGADOR</button>
+         </center>
+         <script>
+            let vida = 200;
+            let jaTocouSomDaMorte = false;
+            let audioGrito = new Audio("scream.mp3");
+            let audioMorte = new Audio("death.mp3");
+            function atacaPlayer(){
+                vida -= 40;
+                barraLife.style.width = vida + "px";
+                if(vida <= 0) {
+                    playerFace.src = "dead.png";
+                    if(!jaTocouSomDaMorte) {
+                        audioMorte.play();
+                        jaTocouSomDaMorte = true;
+                    }
+                }
+                else {
+                    playerFace.src = "aw.png";
+                    audioGrito.play();
+                    playerFace.src = "happy.png";
+                }
+            }
+            btAtacaPlayer.onclick = atacaPlayer;
+         </script>
+    </body>
+</html>
