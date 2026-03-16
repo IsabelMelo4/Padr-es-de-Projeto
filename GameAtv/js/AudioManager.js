@@ -16,9 +16,10 @@ constructor(){
         AudioManager.#instance;
     }
 
-    this.audioAttack = new Audio("audio/audioAttack.mp3");
+    this.audioAttack = new Audio("audio/ryu_hadouken.mp3");
+    this.audioWinner = new Audio("audio/ryuWinner.mp3")
     this.audioBackground = new Audio("audio/audioBackground.mp3");
-
+    this.audioBackground.loop = true;
            // Agora registramos que este é o audio oficial do jogo
     AudioManager.#instance = this;
 }
@@ -32,6 +33,10 @@ playBackground(){
 playAttack(){
     this.audioAttack.play();
 
+}
+
+playWinner(){
+this.audioWinner.play();
 }
  // Método estático usado para pedir o AudioManager do jogo
 static instance(){

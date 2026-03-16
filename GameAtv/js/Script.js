@@ -1,14 +1,53 @@
-function reset(){
+let winner = false;
+
+
+function resetFace(){
 player.src = "img/ryu.png";
+
 }
 
+function ressuscitate(){
+   EnemyManager.instance().ressuscitate();
+   lifeArea.style.width = enemy.health + "px";
+   player.src = "img/ryu.png";
+   winner = false;
 
+}
 
 function attack(){
 
-    AudioManager.instance().playAttack();
-    player.src = "img/ryuAtaque.png";
-    setTimeout(reset, 1000);
+ let enemy = EnemyManager.instance();
+
+    if(winner) return;
+
+    enemy.health -= 40;
+
+    if(enemy.health < 0){
+        enemy.health = 0;
+    }
+
+   lifeArea.style.width = enemy.health + "px";
+
+    if(enemy.health === 0){
+
+        player.src = "img/ryuWinner.gif";
+  
+
+        if(!winner){
+            AudioManager.instance().playWinner();
+            venceu = true;
+            setTimeout(ressuscitate, 10000);
+        }
+
+    } 
+    else {
+
+        AudioManager.instance().playAttack();
+        player.src = "img/ryuAtaque.png";
+        setTimeout(resetFace, 1000);
+
+    }
+  
 }
 
 buttonAttack.onclick = attack;
