@@ -1,8 +1,8 @@
 function reset(){
-
 player.src = "img/ryu.png";
-
 }
+
+
 
 function attack(){
 
