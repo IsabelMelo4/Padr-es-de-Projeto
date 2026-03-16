@@ -35,8 +35,8 @@ function attack(){
 
         if(!winner){
             AudioManager.instance().playWinner();
+            setTimeout(ressuscitate, 300000);
             venceu = true;
-            setTimeout(ressuscitate, 10000);
         }
 
     } 
