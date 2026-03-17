@@ -1,15 +1,15 @@
 let winner = false;
 
-
 function resetFace(){
-player.src = "img/ryu.png";
+    ImageManager.instance().playerStaticImg();
 
 }
 
 function ressuscitate(){
+    
    EnemyManager.instance().ressuscitate();
-   lifeArea.style.width = enemy.health + "px";
-   player.src = "img/ryu.png";
+   lifeArea.style.width = EnemyManager.instance().health + "px"; //lembrar de instanciar sempre !!! 
+   ImageManager.instance().playerStaticImg();
    winner = false;
 
 }
@@ -18,36 +18,39 @@ function attack(){
 
  let enemy = EnemyManager.instance();
 
-    if(winner) return;
+   if(winner)
+    
+    return;
 
     enemy.health -= 40;
 
-    if(enemy.health < 0){
-        enemy.health = 0;
-    }
-
-   lifeArea.style.width = enemy.health + "px";
+    lifeArea.style.width = enemy.health + "px";
 
     if(enemy.health === 0){
+        ImageManager.instance().playerWinnerImg();
+    
 
-        player.src = "img/ryuWinner.gif";
-  
+        
+    if(!winner){
 
-        if(!winner){
-            AudioManager.instance().playWinner();
-            setTimeout(ressuscitate, 300000);
-            venceu = true;
-        }
-
-    } 
-    else {
-
-        AudioManager.instance().playAttack();
-        player.src = "img/ryuAtaque.png";
-        setTimeout(resetFace, 1000);
+        AudioManager.instance().playWinner();
+        winner = true;
+        setTimeout(ressuscitate, 5000);
 
     }
+
+    }
+
+
+    else{
+
+        AudioManager.instance().playAttack();
+        ImageManager.instance().playerAttackImg()
+        setTimeout(resetFace, 1000);
+    }
+
+   }
   
-}
+
 
 buttonAttack.onclick = attack;

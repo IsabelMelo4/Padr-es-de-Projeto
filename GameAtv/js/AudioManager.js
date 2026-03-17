@@ -17,7 +17,7 @@ constructor(){
     }
 
     this.audioAttack = new Audio("audio/ryu_hadouken.mp3");
-    this.audioWinner = new Audio("audio/ryuWinner.mp3")
+    this.audioWinner = new Audio("audio/ryu_shoryuken.mp3")
     this.audioBackground = new Audio("audio/audioBackground.mp3");
     this.audioBackground.loop = true;
            // Agora registramos que este é o audio oficial do jogo
