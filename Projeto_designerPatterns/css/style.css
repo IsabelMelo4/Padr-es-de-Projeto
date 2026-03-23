@@ -1,0 +1,68 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+     flex-direction: column; 
+    background-color: rgb(23, 68, 104);
+
+}
+
+#container{
+
+    display: flex;        /* coloca lado a lado */
+    justify-content: center; /* centraliza */
+    gap: 20px;           /* espaço entre eles */
+    margin-top: 20px;
+}
+
+.enemy button{
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.enemy img{
+    width: 200px;
+}
+
+.enemy{
+    display: flex;
+    flex-direction: column; /* organiza em coluna */
+    align-items: center;    /* centraliza tudo */
+    padding: 10px;
+
+}
+
+.life{
+    
+margin-top: 30px;
+background-color: chartreuse;
+width: 200px;
+height: 15px;
+border-radius: 20px;
+align-items: center;
+}
+
+#enemyImg{
+
+    width: 250px;
+    height: auto;
+}
+
+#playerImg{
+
+    width: 250px;
+    height: auto;
+}
+
+button{
+
+    padding: 8px 15px; /*distancia de um para o outro*/
+    border-radius: 8px; /*tamanho do arredondamento */
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}

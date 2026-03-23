@@ -16,11 +16,18 @@ constructor(){
         AudioManager.#instance;
     }
 
-    this.audioAttack = new Audio("audio/scream.mp3");
-    this.audioDead = new Audio("audio/death.mp3")
-  
-           // Agora registramos que este é o audio oficial do jogo
+    this.audioAttack = new Audio("audio/damage.mp3");
+    this.audioDeath = new Audio("audio/death.mp3")
+    this.audioBackground = new Audio("audio/background.mp3");
+    this.audioBackground.loop = true;
+           // Agora registramos que este é o audio do jogo
     AudioManager.#instance = this;
+}
+
+playBackground(){
+ 
+    this.audioBackground.play();
+
 }
 
 playAttack(){
@@ -29,7 +36,7 @@ playAttack(){
 }
 
 playDie(){
-this.audioDead.play();
+this.audioDeath.play();
 }
  // Método estático usado para pedir o AudioManager do jogo
 static instance(){
