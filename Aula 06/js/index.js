@@ -15,9 +15,6 @@ function attackEnemy() {
 
      let enemy = Enemy.instance();
 
-    /* nesse ponto eu tenho 
-que pegar o enemy UNICO no sistema*/
-
     enemy.health -= 40;
 
     divLifeBar.style.width = enemy.life + "px";
@@ -47,3 +44,5 @@ que pegar o enemy UNICO no sistema*/
 }
 
 buttonAttackEnemy.onclick = attackEnemy;
+
+//refatorar 

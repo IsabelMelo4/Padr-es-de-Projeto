@@ -1,0 +1,15 @@
+.centerContent {
+    text-align: center;
+}
+
+.styleDivLifeBar {
+    background-color: greenyellow; 
+    width: 200px; 
+    height: 30px; 
+    margin: auto;
+}
+
+.styleButtonAttackEnemy {
+    background-color: darkcyan; 
+    height: 45px;
+}
