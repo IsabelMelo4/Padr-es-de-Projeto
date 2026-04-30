@@ -3,13 +3,13 @@
 }
 
 .styleDivLifeBar {
-    background-color: greenyellow; 
+    background-color: rgb(47, 255, 75); 
     width: 200px; 
     height: 30px; 
     margin: auto;
 }
 
-.styleButtonAttackEnemy {
-    background-color: darkcyan; 
+.styleButton {
+    background-color: rgb(81, 84, 230); 
     height: 45px;
 }
