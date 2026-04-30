@@ -9,7 +9,7 @@
     margin: auto;
 }
 
-.styleButton {
-    background-color: rgb(13, 29, 255); 
+.styleButtonAttackEnemy {
+    background-color: darkcyan; 
     height: 45px;
 }
